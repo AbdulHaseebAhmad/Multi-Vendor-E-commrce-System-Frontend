@@ -1,0 +1,138 @@
+import React, { useState } from "react";
+import { useSubmit, useLocation, redirect,Link } from "react-router-dom";
+
+const ShopLoginPage = () => {
+  const location = useLocation();
+  const path = location.pathname;
+  const segments = path.split("/");
+  const pathName = segments[1];
+
+  const [formData, setFormData] = useState({
+    email: "",
+    password: "",
+  });
+
+  const submit = useSubmit();
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const submitHandler = (e) => {
+    e.preventDefault();
+    submit(
+      { email: formData.email, password: formData.password },
+      { method: "POST", encType: "application/json", action: `/${pathName}` }
+    );
+  };
+
+  return (
+    <div className="bg-green-900 h-screen flex justify-center items-center">
+      <div className="bg-yellow-300 p-8 rounded-lg">
+        <h2 className="text-2xl text-green-900 font-extrabold mb-4">Shop Login</h2>
+        <form onSubmit={submitHandler}>
+          <div className="mb-4">
+            <label
+              htmlFor="text"
+              className="block text-sm font-semibold mb-2 text-green-900 font-extrabold"
+            >
+              Email
+            </label>
+            <input
+              onChange={handleChange}
+              type="email"
+              id="email"
+              name="email"
+              className="w-full px-8 py-2 border rounded-sm focus:outline-none focus:border-2 focus:border-green-900"
+              placeholder="Enter your username"
+            />
+          </div>
+          <div className="mb-4">
+            <label
+              htmlFor="password"
+              className="block text-sm text-green-900 font-extrabold mb-2"
+            >
+              Password
+            </label>
+            <input
+              onChange={handleChange}
+              type="password"
+              id="password"
+              name="password"
+              className="w-full px-8 py-2 border rounded-xs focus:outline-none focus:border-2 focus:border-green-900"
+              placeholder="Enter your password"
+            />
+          </div>
+          <button
+            type="submit"
+            className="font-bold w-full bg-green-800 text-yellow-300 py-2 px-4 rounded-lg hover:bg-yellow-300 hover:text-green-800 hover:border-2 hover:border-green-800 hover:border-opacity-75 mb-2"
+          >
+            Login
+          </button>
+          <button
+            type="button"
+            className="col-span-2  font-bold w-full bg-green-800 text-yellow-300 py-2 px-4 rounded-lg hover:bg-yellow-300 hover:text-green-800 hover:border-2 hover:border-green-800 hover:border-opacity-75"
+          >
+          <Link to='/shopsignup'>Sign Up</Link>
+          </button>
+        </form>
+      </div>
+    </div>
+  );
+};
+
+export default ShopLoginPage;
+
+export const shoploginLoader = async ({ request, params }) => {
+  let userresponse = await fetch("http://localhost:3000/api/users/auth/status", {
+    method: "GET",
+    credentials: "include",
+    headers: {
+      Accept: "*/*",
+    },
+  });
+
+  let shopresponse = await fetch("http://localhost:3000/api/shop/auth/status", {
+    method: "GET",
+    credentials: "include",
+    headers: {
+      Accept: "*/*",
+    },
+  });
+  
+  if (userresponse.status === 200) {
+    return redirect("/home");
+  } if (shopresponse.status === 200){
+    return redirect("/shop");
+  }
+  if (shopresponse.status === 401){
+    return null;
+  }
+};
+export const shoploginAction = async ({ request, params }) => {
+  const data = await request.json();
+  const formData = { email: data.email, password: data.password };
+  //console.log(JSON.stringify(formData));
+  const sendCredentialsForLogin = await fetch(
+    "http://localhost:3000/api/shop/auth/login",
+    {
+      method: request.method,
+      credentials: "include",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
+    }
+  );
+  const resData = await sendCredentialsForLogin.json();
+  console.log(sendCredentialsForLogin.status);
+  console.log(sendCredentialsForLogin);
+
+  if(sendCredentialsForLogin.status === 200){
+    return redirect('/shop')
+  }
+  else {return null};
+};
