@@ -25,7 +25,7 @@ export default function RootElement() {
 }
 
 export const authCechkLoader = async ({ request, params }) => {
-  let response = await fetch("http://localhost:3000/api/users/auth/status", {
+  let response = await fetch("https://multi-vendor-e-commerce-backend.vercel.app/api/users/auth/status", {
     method: "GET",
     credentials: "include",
     headers: {
@@ -33,7 +33,7 @@ export const authCechkLoader = async ({ request, params }) => {
     },
   });
 
-  let responseTwo = await fetch("http://localhost:3000/api/shop/auth/status", {
+  let responseTwo = await fetch("https://multi-vendor-e-commerce-backend.vercel.app/api/shop/auth/status", {
     method: "GET",
     credentials: "include",
     headers: {

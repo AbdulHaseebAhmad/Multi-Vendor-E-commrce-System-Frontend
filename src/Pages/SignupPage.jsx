@@ -193,7 +193,7 @@ export default function SignupPage() {
 
 export const signupLoader = async ({ request, params }) => {
   console.log(params);
-  let response = await fetch("http://localhost:3000/api/users/auth/status", {
+  let response = await fetch("https://multi-vendor-e-commerce-backend.vercel.app/api/users/auth/status", {
     method: "GET",
     credentials: "include",
     headers: {
@@ -225,7 +225,7 @@ export const signupAction = async ({ request, params }) => {
   };
 
   const sendCredentialsForLogin = await fetch(
-    "http://localhost:3000/api/users/auth/signup",
+    "https://multi-vendor-e-commerce-backend.vercel.app/api/users/auth/signup",
     {
       method: request.method,
       credentials: "include",

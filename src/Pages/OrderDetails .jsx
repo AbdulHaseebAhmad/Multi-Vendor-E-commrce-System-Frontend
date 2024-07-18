@@ -173,7 +173,7 @@ export default OrderDetails;
 export const orderDetailsLoader = async ({ request, params }) => {
   const { orderid } = params;
   const getorderdetails = await fetch(
-    `http://localhost:3000/api/orders/orderdetails?orderid=${orderid}`,
+    `https://multi-vendor-e-commerce-backend.vercel.app/api/orders/orderdetails?orderid=${orderid}`,
     { method: "GET", credentials: "include" }
   );
   const response = await getorderdetails.json();
@@ -188,7 +188,7 @@ export const orderCompleteRequest = async ({ request, params }) => {
   const { _id: orderid } = await request.json();
   console.log(orderid);
   const getorderdetails = await fetch(
-    `http://localhost:3000/api/orders/completeorder?orderid=${orderid}`,
+    `https://multi-vendor-e-commerce-backend.vercel.app/api/orders/completeorder?orderid=${orderid}`,
     { method: "PATCH", credentials: "include" }
   );
   const response = await getorderdetails.json();

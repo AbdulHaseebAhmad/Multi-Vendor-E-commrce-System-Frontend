@@ -20,7 +20,7 @@ const ViewProductDetails = () => {
     const getSameCategoryProducts = async () => {
       try {
         const sameProducts = await fetch(
-          `http://localhost:3000/api/products/categoryproducts?filter=categories&value=${fetchedProductDetailData.categories}`,
+          `https://multi-vendor-e-commerce-backend.vercel.app/api/products/categoryproducts?filter=categories&value=${fetchedProductDetailData.categories}`,
           {
             method: "Get",
             credentials: "include",
@@ -163,7 +163,7 @@ export const prdouctDetailLoader = async ({ request, params }) => {
   const productId = params.productId;
 
   const fetchProductDetailsRequest = await fetch(
-    `http://localhost:3000/api/products/${productId}`,
+    `https://multi-vendor-e-commerce-backend.vercel.app/api/products/${productId}`,
     {
       method: "GET",
       credentials: "include",

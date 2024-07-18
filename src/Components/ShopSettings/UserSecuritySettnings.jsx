@@ -31,7 +31,7 @@ const UserSettings = ({email, phone,password, _id}) => {
     reqBody.confirmPassword = confirmPassword;
     let bodyContent = JSON.stringify(reqBody);
     const sendUpdateRequest = await fetch(
-      "http://localhost:3000/api/shop/updatesecurity",
+      "https://multi-vendor-e-commerce-backend.vercel.app/api/shop/updatesecurity",
       {
         method: "PATCH",
         credentials: "include",

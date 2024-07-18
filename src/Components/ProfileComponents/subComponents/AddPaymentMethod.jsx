@@ -29,7 +29,7 @@ export default function AddPaymentMethod({ type }) {
     const reqbody = newMethodDetails;
     console.log(reqbody)
     const addnewpaymentreq = await fetch(
-      "http://localhost:3000/api/users/addnewpayment",
+      "https://multi-vendor-e-commerce-backend.vercel.app/api/users/addnewpayment",
       {
         method: "POST",
         credentials: "include",

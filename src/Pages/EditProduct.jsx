@@ -103,10 +103,10 @@ export default function EditProduct() {
     let url = "";
     let method = "";
     if(isDiscounted){
-      url = `http://localhost:3000/api/deals?categoryname=${product.categories}&dealname=${discountDetails['Deal Name']}`
+      url = `https://multi-vendor-e-commerce-backend.vercel.app/api/deals?categoryname=${product.categories}&dealname=${discountDetails['Deal Name']}`
       method = 'POST'
     } else {
-      url = `http://localhost:3000/api/deals/deletecategory?categoryname=${product.categories}`;
+      url = `https://multi-vendor-e-commerce-backend.vercel.app/api/deals/deletecategory?categoryname=${product.categories}`;
       method = 'DELETE'
     }
 
@@ -285,7 +285,7 @@ export default function EditProduct() {
 export const editproductloader = async ({ request, params }) => {
   const { productid } = params;
   const getproduct = await fetch(
-    `http://localhost:3000/api/products/${productid}`,
+    `https://multi-vendor-e-commerce-backend.vercel.app/api/products/${productid}`,
     {
       method: "GET",
       credentials: "include",
@@ -302,7 +302,7 @@ export const editproductaction = async ({ request, params }) => {
   const body = await request.json();
   console.log(body);
   const sendRequest = await fetch(
-    "http://localhost:3000/api/shop/editproduct",
+    "https://multi-vendor-e-commerce-backend.vercel.app/api/shop/editproduct",
     {
       method: "PUT",
       credentials: "include",

@@ -90,7 +90,7 @@ export default function ShopRoot() {
 
 export const shophomeloader = async () => {
   let userresponse = await fetch(
-    "http://localhost:3000/api/users/auth/status",
+    "https://multi-vendor-e-commerce-backend.vercel.app/api/users/auth/status",
     {
       method: "GET",
       credentials: "include",
@@ -100,7 +100,7 @@ export const shophomeloader = async () => {
     }
   );
 
-  let shopresponse = await fetch("http://localhost:3000/api/shop/auth/status", {
+  let shopresponse = await fetch("https://multi-vendor-e-commerce-backend.vercel.app/api/shop/auth/status", {
     method: "GET",
     credentials: "include",
     headers: {
