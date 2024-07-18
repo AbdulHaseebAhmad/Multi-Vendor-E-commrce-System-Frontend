@@ -8,7 +8,7 @@ const SearchProduct = () => {
   console.log(_id)
   const getProduct = async () => {
     const request = await fetch(
-      `https://multi-vendor-e-commerce-backend.vercel.app/api/products/searchproducts/${productId}?sellerId=${_id}`,
+      `http://localhost:3000/api/products/searchproducts/${productId}?sellerId=${_id}`,
       {
         method: "GET",
         credentials: "include",

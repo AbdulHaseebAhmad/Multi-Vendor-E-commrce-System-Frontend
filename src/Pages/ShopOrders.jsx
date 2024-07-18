@@ -16,7 +16,7 @@ export default function ShopOrders() {
   useEffect(() => {
     const orders = async () => {
       const request = await fetch(
-        `https://multi-vendor-e-commerce-backend.vercel.app/api/orders/getshoporders?shopid=${_id}`,
+        `http://localhost:3000/api/orders/getshoporders?shopid=${_id}`,
         {
           method: "GET",
           credentials: "include",

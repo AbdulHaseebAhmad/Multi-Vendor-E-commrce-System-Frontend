@@ -32,7 +32,7 @@ const UserDetails = () => {
     reqBody.fieldvalue = fieldValue;
     let bodyContent = JSON.stringify(reqBody);
     const sendUpdateRequest = await fetch(
-      "https://multi-vendor-e-commerce-backend.vercel.app/api/users/updateuser",
+      "http://localhost:3000/api/users/updateuser",
       {
         method: "PATCH",
         credentials: "include",

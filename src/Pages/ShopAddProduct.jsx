@@ -171,7 +171,7 @@ export const addProductAction = async ({request,params}) => {
   const { method, encType } = request;
   const body = await request.json();
   console.log(body)
-  const sendRequest = await fetch("https://multi-vendor-e-commerce-backend.vercel.app/api/shop/addproduct", {
+  const sendRequest = await fetch("http://localhost:3000/api/shop/addproduct", {
     method: 'POST',
     credentials: "include",
     headers: {

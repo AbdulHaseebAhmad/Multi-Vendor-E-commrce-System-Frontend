@@ -21,7 +21,7 @@ export default function ShopHomePage() {
   useEffect(() => {
     const products = async () => {
       const getproducts = await fetch(
-        `https://multi-vendor-e-commerce-backend.vercel.app/api/shop/getproducts?shopid=${_id}`,
+        `http://localhost:3000/api/shop/getproducts?shopid=${_id}`,
         {
           method: "GET",
           credentials: "include",
@@ -36,7 +36,7 @@ export default function ShopHomePage() {
     };
 
     const ordersdata = async () => {
-      const getordersdata = await fetch( `https://multi-vendor-e-commerce-backend.vercel.app/api/orders/getshoporders?shopid=${_id}`,
+      const getordersdata = await fetch( `http://localhost:3000/api/orders/getshoporders?shopid=${_id}`,
       {
         method: "GET",
         credentials: "include",
@@ -53,7 +53,7 @@ export default function ShopHomePage() {
   }, []);
 
   const deleteproductHandle = async (id) => {
-    const sendDeleteProductRequest = await fetch(`https://multi-vendor-e-commerce-backend.vercel.app/api/shop/deleteproduct?productid=${id}`,{
+    const sendDeleteProductRequest = await fetch(`http://localhost:3000/api/shop/deleteproduct?productid=${id}`,{
       method:"DELETE",
       credentials:'include'
     })

@@ -44,7 +44,7 @@ const BackgroundImageWithTitle = () => {
 
   useEffect(() => {
     const sendRequest = async () => {
-      const request = await fetch("https://multi-vendor-e-commerce-backend.vercel.app/api/deals/gettrendingcategories", {
+      const request = await fetch("http://localhost:3000/api/deals/gettrendingcategories", {
         method: "GET",
         credentials: "include",
         headers: { "Content-Type": "application/json" },

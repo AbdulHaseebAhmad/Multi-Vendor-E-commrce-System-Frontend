@@ -179,14 +179,14 @@ export default function ShopSignUp() {
 
 export const shopSignupLoader = async ({ request, params }) => {
   console.log(params);
-  let response = await fetch("https://multi-vendor-e-commerce-backend.vercel.app/api/users/auth/status", {
+  let response = await fetch("http://localhost:3000/api/users/auth/status", {
     method: "GET",
     credentials: "include",
     headers: {
       Accept: "*/*",
     },
   });
-  let responseTwo = await fetch("https://multi-vendor-e-commerce-backend.vercel.app/api/shop/auth/status", {
+  let responseTwo = await fetch("http://localhost:3000/api/shop/auth/status", {
     method: "GET",
     credentials: "include",
     headers: {
@@ -218,7 +218,7 @@ export const shopSignupAction = async ({ request, params }) => {
   };
 
   const sendCredentialsForLogin = await fetch(
-    "https://multi-vendor-e-commerce-backend.vercel.app/api/shop/auth/signup",
+    "http://localhost:3000/api/shop/auth/signup",
     {
       method: request.method,
       credentials: "include",

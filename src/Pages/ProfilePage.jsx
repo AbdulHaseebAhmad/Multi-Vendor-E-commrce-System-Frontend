@@ -39,7 +39,7 @@ export default function ProfilePage() {
 }
 
 export const profileloder = async ({ request, params }) => {
-  let response = await fetch("https://multi-vendor-e-commerce-backend.vercel.app/api/users/auth/status", {
+  let response = await fetch("http://localhost:3000/api/users/auth/status", {
     method: "GET",
     credentials: "include",
     headers: {

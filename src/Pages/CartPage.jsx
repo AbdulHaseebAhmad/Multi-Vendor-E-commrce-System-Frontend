@@ -330,7 +330,7 @@ export const placeOrderAction = async ({ request, params }) => {
   const order = await request.json();
 
   const placeOrder = await fetch(
-    "https://multi-vendor-e-commerce-backend.vercel.app/api/orders/placeorder",
+    "http://localhost:3000/api/orders/placeorder",
     {
       method: method,
       credentials: "include",

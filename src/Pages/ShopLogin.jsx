@@ -87,7 +87,7 @@ const ShopLoginPage = () => {
 export default ShopLoginPage;
 
 export const shoploginLoader = async ({ request, params }) => {
-  let userresponse = await fetch("https://multi-vendor-e-commerce-backend.vercel.app/api/users/auth/status", {
+  let userresponse = await fetch("http://localhost:3000/api/users/auth/status", {
     method: "GET",
     credentials: "include",
     headers: {
@@ -95,7 +95,7 @@ export const shoploginLoader = async ({ request, params }) => {
     },
   });
 
-  let shopresponse = await fetch("https://multi-vendor-e-commerce-backend.vercel.app/api/shop/auth/status", {
+  let shopresponse = await fetch("http://localhost:3000/api/shop/auth/status", {
     method: "GET",
     credentials: "include",
     headers: {
@@ -117,7 +117,7 @@ export const shoploginAction = async ({ request, params }) => {
   const formData = { email: data.email, password: data.password };
   //console.log(JSON.stringify(formData));
   const sendCredentialsForLogin = await fetch(
-    "https://multi-vendor-e-commerce-backend.vercel.app/api/shop/auth/login",
+    "http://localhost:3000/api/shop/auth/login",
     {
       method: request.method,
       credentials: "include",

@@ -129,8 +129,8 @@ export const productsLoader = async ({ request, params }) => {
   console.log(request.url.split('/'));
   let url =
     categoryname === "all"
-      ? "https://multi-vendor-e-commerce-backend.vercel.app/api/products/allproducts"
-      : `https://multi-vendor-e-commerce-backend.vercel.app/api/products/categoryproducts?filter=categories&value=${categoryname}`;
+      ? "http://localhost:3000/api/products/allproducts"
+      : `http://localhost:3000/api/products/categoryproducts?filter=categories&value=${categoryname}`;
   const sendProductFetchRequest = await fetch(url, {
     method: "GET",
     credentials: "include",

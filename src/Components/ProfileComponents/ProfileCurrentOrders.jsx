@@ -12,7 +12,7 @@ const ProfileCurrentOrders = () => {
     const getorders = async () => {
       let localOrders = [];
       const orders = await fetch(
-        `https://multi-vendor-e-commerce-backend.vercel.app/api/orders/getcustomerorders?customerid=${_id}`,
+        `http://localhost:3000/api/orders/getcustomerorders?customerid=${_id}`,
         { method: "GET", credentials: "include" }
       );
       if(orders.ok){

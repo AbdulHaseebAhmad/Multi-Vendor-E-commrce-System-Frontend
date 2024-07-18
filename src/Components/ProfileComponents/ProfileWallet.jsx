@@ -25,7 +25,7 @@ const Wallet = () => {
     const reqBody = JSON.stringify({ email, editingCard, id });
     console.log(reqBody);
     const updatepayment = await fetch(
-      "https://multi-vendor-e-commerce-backend.vercel.app/api/users/updatepaymentmethod",
+      "http://localhost:3000/api/users/updatepaymentmethod",
       {
         method: "PATCH",
         credentials: "include",
