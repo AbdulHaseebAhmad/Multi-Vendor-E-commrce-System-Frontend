@@ -87,7 +87,7 @@ const ShopLoginPage = () => {
 export default ShopLoginPage;
 
 export const shoploginLoader = async ({ request, params }) => {
-  let userresponse = await fetch("http://localhost:3000/api/users/auth/status", {
+  let userresponse = await fetch("http://52.70.243.175:5001/api/users/auth/status", {
     method: "GET",
     credentials: "include",
     headers: {
@@ -95,7 +95,7 @@ export const shoploginLoader = async ({ request, params }) => {
     },
   });
 
-  let shopresponse = await fetch("http://localhost:3000/api/shop/auth/status", {
+  let shopresponse = await fetch("http://52.70.243.175:5001/api/shop/auth/status", {
     method: "GET",
     credentials: "include",
     headers: {
