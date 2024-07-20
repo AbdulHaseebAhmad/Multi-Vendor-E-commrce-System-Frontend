@@ -330,7 +330,7 @@ export const placeOrderAction = async ({ request, params }) => {
   const order = await request.json();
 
   const placeOrder = await fetch(
-    "http://localhost:3000/api/orders/placeorder",
+    "http://52.70.243.175:5001/api/orders/placeorder",
     {
       method: method,
       credentials: "include",
