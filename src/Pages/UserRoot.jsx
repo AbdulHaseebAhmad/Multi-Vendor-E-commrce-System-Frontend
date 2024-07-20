@@ -24,7 +24,7 @@ export default function UserRooot() {
 
 export const shophomeloader = async () => {
   let userresponse = await fetch(
-    "http://52.70.243.175:5001/api/users/auth/status",
+    "https://52.70.243.175:443/api/users/auth/status",
     {
       method: "GET",
       credentials: "include",
@@ -34,7 +34,7 @@ export const shophomeloader = async () => {
     }
   );
 
-  let shopresponse = await fetch("http://52.70.243.175:5001/api/shop/auth/status", {
+  let shopresponse = await fetch("https://52.70.243.175:443/api/shop/auth/status", {
     method: "GET",
     credentials: "include",
     headers: {

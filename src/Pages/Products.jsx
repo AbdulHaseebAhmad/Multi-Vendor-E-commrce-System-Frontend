@@ -129,8 +129,8 @@ export const productsLoader = async ({ request, params }) => {
   console.log(request.url.split('/'));
   let url =
     categoryname === "all"
-      ? "http://localhost:3000/api/products/allproducts"
-      : `http://localhost:3000/api/products/categoryproducts?filter=categories&value=${categoryname}`;
+      ? "https://52.70.243.175:443/api/products/allproducts"
+      : `https://52.70.243.175:443/api/products/categoryproducts?filter=categories&value=${categoryname}`;
   const sendProductFetchRequest = await fetch(url, {
     method: "GET",
     credentials: "include",

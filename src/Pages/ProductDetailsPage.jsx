@@ -25,7 +25,7 @@ const ProductDetailPage = () => {
     const getSameCategoryProducts = async () => {
       try {
         const sameProducts = await fetch(
-          `http://52.70.243.175:5001/api/products/categoryproducts?filter=categories&value=${fetchedProductDetailData.categories}`,
+          `https://52.70.243.175:443/api/products/categoryproducts?filter=categories&value=${fetchedProductDetailData.categories}`,
           {
             method: "Get",
             credentials: "include",
@@ -344,7 +344,7 @@ export const prdouctDetailLoader = async ({ request, params }) => {
   const productId = params.productId;
 
   const fetchProductDetailsRequest = await fetch(
-    `http://52.70.243.175:5001/api/products/${productId}`,
+    `https://52.70.243.175:443/api/products/${productId}`,
     {
       method: "GET",
       credentials: "include",

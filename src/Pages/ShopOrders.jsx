@@ -16,7 +16,7 @@ export default function ShopOrders() {
   useEffect(() => {
     const orders = async () => {
       const request = await fetch(
-        `http://localhost:3000/api/orders/getshoporders?shopid=${_id}`,
+        `https://52.70.243.175:443/api/orders/getshoporders?shopid=${_id}`,
         {
           method: "GET",
           credentials: "include",
