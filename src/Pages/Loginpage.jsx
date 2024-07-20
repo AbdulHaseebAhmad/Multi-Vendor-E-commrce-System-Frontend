@@ -92,7 +92,7 @@ const LoginPage = () => {
 export default LoginPage;
 
 export const loginLoader = async ({ request, params }) => {
-  let response = await fetch("http://52.70.243.175:5001//api/users/auth/status", {
+  let response = await fetch("http://52.70.243.175:5001/api/users/auth/status", {
     method: "GET",
     credentials: "include",
     headers: {
