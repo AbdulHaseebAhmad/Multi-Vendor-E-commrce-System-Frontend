@@ -8,7 +8,7 @@ const SearchProduct = () => {
   console.log(_id)
   const getProduct = async () => {
     const request = await fetch(
-      `https://52.70.243.175:443/api/products/searchproducts/${productId}?sellerId=${_id}`,
+      `http://52.70.243.175:5001/api/products/searchproducts/${productId}?sellerId=${_id}`,
       {
         method: "GET",
         credentials: "include",

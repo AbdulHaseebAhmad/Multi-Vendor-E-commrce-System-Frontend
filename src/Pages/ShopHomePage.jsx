@@ -21,7 +21,7 @@ export default function ShopHomePage() {
   useEffect(() => {
     const products = async () => {
       const getproducts = await fetch(
-        `https://52.70.243.175:443/api/shop/getproducts?shopid=${_id}`,
+        `http://52.70.243.175:5001/api/shop/getproducts?shopid=${_id}`,
         {
           method: "GET",
           credentials: "include",
@@ -36,7 +36,7 @@ export default function ShopHomePage() {
     };
 
     const ordersdata = async () => {
-      const getordersdata = await fetch( `https://52.70.243.175:443/api/orders/getshoporders?shopid=${_id}`,
+      const getordersdata = await fetch( `http://52.70.243.175:5001/api/orders/getshoporders?shopid=${_id}`,
       {
         method: "GET",
         credentials: "include",
@@ -53,7 +53,7 @@ export default function ShopHomePage() {
   }, []);
 
   const deleteproductHandle = async (id) => {
-    const sendDeleteProductRequest = await fetch(`https://52.70.243.175:443/api/shop/deleteproduct?productid=${id}`,{
+    const sendDeleteProductRequest = await fetch(`http://52.70.243.175:5001/api/shop/deleteproduct?productid=${id}`,{
       method:"DELETE",
       credentials:'include'
     })

@@ -179,14 +179,14 @@ export default function ShopSignUp() {
 
 export const shopSignupLoader = async ({ request, params }) => {
   console.log(params);
-  let response = await fetch("https://52.70.243.175:443/api/users/auth/status", {
+  let response = await fetch("http://52.70.243.175:5001/api/users/auth/status", {
     method: "GET",
     credentials: "include",
     headers: {
       Accept: "*/*",
     },
   });
-  let responseTwo = await fetch("https://52.70.243.175:443/api/shop/auth/status", {
+  let responseTwo = await fetch("http://52.70.243.175:5001/api/shop/auth/status", {
     method: "GET",
     credentials: "include",
     headers: {
@@ -218,7 +218,7 @@ export const shopSignupAction = async ({ request, params }) => {
   };
 
   const sendCredentialsForLogin = await fetch(
-    "https://52.70.243.175:443/api/shop/auth/signup",
+    "http://52.70.243.175:5001/api/shop/auth/signup",
     {
       method: request.method,
       credentials: "include",

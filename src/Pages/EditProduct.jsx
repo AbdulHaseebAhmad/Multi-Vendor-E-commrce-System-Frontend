@@ -103,10 +103,10 @@ export default function EditProduct() {
     let url = "";
     let method = "";
     if(isDiscounted){
-      url = `https://52.70.243.175:443/api/deals?categoryname=${product.categories}&dealname=${discountDetails['Deal Name']}`
+      url = `http://52.70.243.175:5001/api/deals?categoryname=${product.categories}&dealname=${discountDetails['Deal Name']}`
       method = 'POST'
     } else {
-      url = `https://52.70.243.175:443/api/deals/deletecategory?categoryname=${product.categories}`;
+      url = `http://52.70.243.175:5001/api/deals/deletecategory?categoryname=${product.categories}`;
       method = 'DELETE'
     }
 
@@ -285,7 +285,7 @@ export default function EditProduct() {
 export const editproductloader = async ({ request, params }) => {
   const { productid } = params;
   const getproduct = await fetch(
-    `https://52.70.243.175:443/api/products/${productid}`,
+    `http://52.70.243.175:5001/api/products/${productid}`,
     {
       method: "GET",
       credentials: "include",
@@ -302,7 +302,7 @@ export const editproductaction = async ({ request, params }) => {
   const body = await request.json();
   console.log(body);
   const sendRequest = await fetch(
-    "https://52.70.243.175:443/api/shop/editproduct",
+    "http://52.70.243.175:5001/api/shop/editproduct",
     {
       method: "PUT",
       credentials: "include",

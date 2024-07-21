@@ -171,7 +171,7 @@ export const addProductAction = async ({request,params}) => {
   const { method, encType } = request;
   const body = await request.json();
   console.log(body)
-  const sendRequest = await fetch("https://52.70.243.175:443/api/shop/addproduct", {
+  const sendRequest = await fetch("http://52.70.243.175:5001/api/shop/addproduct", {
     method: 'POST',
     credentials: "include",
     headers: {

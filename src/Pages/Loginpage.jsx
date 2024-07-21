@@ -92,7 +92,7 @@ const LoginPage = () => {
 export default LoginPage;
 
 export const loginLoader = async ({ request, params }) => {
-  let response = await fetch("https://52.70.243.175:443/api/users/auth/status", {
+  let response = await fetch("http://52.70.243.175:5001/api/users/auth/status", {
     method: "GET",
     credentials: "include",
     headers: {
@@ -110,7 +110,7 @@ export const loginAction = async ({ request, params }) => {
   const formData = { email: data.email, password: data.password };
   //console.log(JSON.stringify(formData));
   const sendCredentialsForLogin = await fetch(
-    "https://52.70.243.175:443/api/users/auth/login",
+    "http://52.70.243.175:5001/api/users/auth/login",
     {
       method: request.method,
       credentials: "include",

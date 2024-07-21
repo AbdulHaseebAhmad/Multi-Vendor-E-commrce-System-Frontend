@@ -25,7 +25,7 @@ export default function RootElement() {
 }
 
 export const authCechkLoader = async ({ request, params }) => {
-  let response = await fetch("https://52.70.243.175:443/api/users/auth/status", {
+  let response = await fetch("http://52.70.243.175:5001/api/users/auth/status", {
     method: "GET",
     credentials: "include",
     headers: {
@@ -33,7 +33,7 @@ export const authCechkLoader = async ({ request, params }) => {
     },
   });
 
-  let responseTwo = await fetch("https://52.70.243.175:443/api/shop/auth/status", {
+  let responseTwo = await fetch("http://52.70.243.175:5001/api/shop/auth/status", {
     method: "GET",
     credentials: "include",
     headers: {

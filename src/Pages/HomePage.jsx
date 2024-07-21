@@ -30,7 +30,7 @@ export default function HomePage() {
 }
 
 export const homeLoader = async ({ request, params }) => {
-  let response = await fetch("https://52.70.243.175:443/api/users/auth/status", {
+  let response = await fetch("http://52.70.243.175:5001/api/users/auth/status", {
     method: "GET",
     credentials: "include",
     headers: {
@@ -47,7 +47,7 @@ export const homeLoader = async ({ request, params }) => {
 
 
 export const homeLogOutAction = async ({request,params}) => {
-  const sendLogoutRequest = await fetch("https://52.70.243.175:443/api/users/auth/logout",{
+  const sendLogoutRequest = await fetch("http://52.70.243.175:5001/api/users/auth/logout",{
     method:request.method,
     credentials:'include',
     headers:{

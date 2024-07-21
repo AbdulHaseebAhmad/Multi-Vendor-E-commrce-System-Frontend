@@ -87,7 +87,7 @@ const ShopLoginPage = () => {
 export default ShopLoginPage;
 
 export const shoploginLoader = async ({ request, params }) => {
-  let userresponse = await fetch("https://52.70.243.175:443/api/users/auth/status", {
+  let userresponse = await fetch("http://52.70.243.175:5001/api/users/auth/status", {
     method: "GET",
     credentials: "include",
     headers: {
@@ -95,7 +95,7 @@ export const shoploginLoader = async ({ request, params }) => {
     },
   });
 
-  let shopresponse = await fetch("https://52.70.243.175:443/api/shop/auth/status", {
+  let shopresponse = await fetch("http://52.70.243.175:5001/api/shop/auth/status", {
     method: "GET",
     credentials: "include",
     headers: {
@@ -117,7 +117,7 @@ export const shoploginAction = async ({ request, params }) => {
   const formData = { email: data.email, password: data.password };
   //console.log(JSON.stringify(formData));
   const sendCredentialsForLogin = await fetch(
-    "https://52.70.243.175:443/api/shop/auth/login",
+    "http://52.70.243.175:5001/api/shop/auth/login",
     {
       method: request.method,
       credentials: "include",

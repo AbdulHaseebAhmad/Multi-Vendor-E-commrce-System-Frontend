@@ -193,7 +193,7 @@ export default function SignupPage() {
 
 export const signupLoader = async ({ request, params }) => {
   console.log(params);
-  let response = await fetch("https://52.70.243.175:443/api/users/auth/status", {
+  let response = await fetch("http://52.70.243.175:5001/api/users/auth/status", {
     method: "GET",
     credentials: "include",
     headers: {
