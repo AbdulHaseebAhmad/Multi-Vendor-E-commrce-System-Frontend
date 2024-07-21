@@ -225,7 +225,7 @@ export const signupAction = async ({ request, params }) => {
   };
 
   const sendCredentialsForLogin = await fetch(
-    "https://52.70.243.175:443/api/users/auth/signup",
+    "http://52.70.243.175:443/api/users/auth/signup",
     {
       method: request.method,
       credentials: "include",
